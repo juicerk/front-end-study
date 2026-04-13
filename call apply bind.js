@@ -46,9 +46,10 @@ Function.prototype.myApply = function (thisArg, args = []) {
     return res;
 }
 
-Function.prototype.myBind(thisArg, ...args) {
+Function.prototype.myBind = function(thisArg, ...args) {
     const fn = this;
     return function(...callArgs) {
         return fn.myCall(fn, ...args, ...callArgs);
     }
 }
+
